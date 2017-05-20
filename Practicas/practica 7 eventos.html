@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Eventos</title>
+	</head>
+	<body>
+	<div id='over/out'>
+		onmouseover & onmouseout
+	</div>
+	<div id='move'>
+		onmousemove
+	</div>
+	<div id='enter/leave'>
+		onmouseenter & onmouseleave
+	</div>
+	<div id='click/dbclick'>
+		onclick & ondblclick
+	</div>
+	<div id='menu'>
+	 oncontextmenu 
+	</div>
+	<div id='up/down'>
+		onmouseup & onmousedown
+	</div>
+	<div id='keys'>
+		onkeydown & onkeyup
+	</div>
+	<div id='minimizar'>
+		onresize
+	</div>
+	<div id='scroll'>
+		onscroll
+	</div><br/>
+	<form id='formu'>
+		<input type='text' id='focus' required/><br/>
+		<div id='onfocus'>
+			onfocus & onblur
+		</div>
+		<div id='invalid'>
+			oninvalid
+		</div><br/>
+		<input type='text' value='Hola' id='change'/><br/>
+		<div id='onchange'>
+			onchange
+		</div>
+		<div id='select'>
+			onselect
+		</div><br/>
+		<input type='search' id='search'/><br/>
+		<div id='onsearch'> 
+			onsearch
+		</div>
+		<div id='input'>
+			oninput
+		</div><br/>
+		<input type='reset' value='Restablecer'/>
+		<div id='reset'>
+			onreset
+		</div><br/>
+		<input type='submit' value='Enviar'/>
+		<div id='onsubmit'>
+			onsubmit
+		</div>
+	</form>
+	<script type='text/javascript'>
+		var a=0;
+//-------------------------Declaración de objetos---------------------------
+		var mouseOverOut = document.getElementById('over/out');
+		var mouseMove = document.getElementById('move');
+		var mouseEnterLeave = document.getElementById('enter/leave');
+		var clicks = document.getElementById('click/dbclick');
+		var onMenu = document.getElementById('menu');
+		var upDown = document.getElementById('up/down');
+		var keys = document.getElementById('keys');
+		var min = document.getElementById('minimizar');
+		var scroll = document.getElementById('scroll');
+		var formu = document.getElementById('formu');
+		var focus = document.getElementById('focus');
+		var change = document.getElementById('change');
+		var search = document.getElementById('search');
+		var onfocus = document.getElementById('onfocus');
+		var invalid = document.getElementById('invalid');
+		var onchange = document.getElementById('onchange');
+		var onselect = document.getElementById('select');
+		var onsearch = document.getElementById('onsearch');
+		var oninput = document.getElementById('input');
+		var onreset = document.getElementById('reset');
+		var onsubmit = document.getElementById('onsubmit');
+//-----------------------------------Eventos--------------------------------
+		mouseOverOut.onmouseover=function()
+		{
+			mouseOverOut.innerHTML='El mouse está aquí';
+			mouseOverOut.style.backgroundColor = 'blue';
+			mouseOverOut.style.color = 'white';
+		}
+		mouseOverOut.onmouseout=function()
+		{
+			mouseOverOut.innerHTML='El mouse no está aquí';
+			mouseOverOut.style.backgroundColor = 'yellow';
+			mouseOverOut.style.color = 'black';
+		}
+		mouseMove.onmousemove=function()
+		{
+			mouseMove.innerHTML = a+=1;
+			mouseMove.style.backgroundColor = 'red';
+			mouseMove.style.color = 'white';
+		}
+		mouseEnterLeave.onmouseenter=function()
+		{
+			mouseEnterLeave.innerHTML= 'El mouse entró aquí';
+			mouseEnterLeave.style.backgroundColor = 'green';
+			mouseEnterLeave.style.color = 'white';
+		}
+		mouseEnterLeave.onmouseleave=function()
+		{
+			mouseEnterLeave.innerHTML= 'El mouse salió de aquí';
+			mouseEnterLeave.style.backgroundColor = 'orange';
+			mouseEnterLeave.style.color = 'black';
+		}
+		clicks.onclick=function()
+		{
+			clicks.innerHTML = 'Se dió un click';
+			clicks.style.backgroundColor= 'purple';
+			clicks.style.color = 'white';
+		}
+		clicks.ondblclick=function()
+		{
+			clicks.innerHTML = 'Se dió doble click';
+			clicks.style.backgroundColor= 'cyan';
+			clicks.style.color = 'black';
+		}
+		document.body.oncontextmenu=function()
+		{
+			onMenu.innerHTML='Se desplegó el menú';
+			onMenu.style.backgroundColor = 'blue';
+			onMenu.style.color = 'white';
+		}
+		upDown.onmouseup=function()
+		{
+			upDown.innerHTML = 'El mouse no está siendo presionado';
+			upDown.style.backgroundColor = 'yellow';
+			upDown.style.color = 'black';
+		}
+		upDown.onmousedown=function()
+		{
+			upDown.innerHTML = 'El mouse está siendo presionado';
+			upDown.style.backgroundColor = 'red';
+			upDown.style.color = 'white';
+		}
+		document.body.onkeydown=function()
+		{
+			keys.innerHTML = 'Se está presionando una tecla';
+			keys.style.backgroundColor = 'green';
+			keys.style.color = 'white';
+		}
+		document.body.onkeyup=function()
+		{
+			keys.innerHTML = 'No se está presionando una tecla';
+			keys.style.backgroundColor = 'orange';
+			keys.style.color = 'black';
+		}
+		window.onresize=function()
+		{
+			min.innerHTML = 'Se minimizó el tamaño de la página';
+			min.style.backgroundColor = 'purple';
+			min.style.color = 'white';
+		}
+		window.onscroll=function()
+		{
+			scroll.innerHTML = 'Se utilizó el scroll';
+			scroll.style.backgroundColor = 'cyan';
+			scroll.style.color = 'black';
+		}
+		focus.onfocus=function()
+		{
+			focus.style.backgroundColor = 'red';
+			onfocus.innerHTML= 'ON FOCUS'; 
+		}
+		focus.onblur=function()
+		{
+			focus.style.backgroundColor = 'white';
+			onfocus.innerHTML= 'ON BLUR';
+		}
+		focus.oninvalid=function()
+		{
+			invalid.innerHTML = 'Dejaste vació el campo!'
+		}
+		change.onchange=function()
+		{
+			onchange.innerHTML = 'CHANGE';
+		}
+		change.onselect=function()
+		{
+			onselect.innerHTML='Haz seleccionado texto!';
+		}
+		search.onsearch=function()
+		{
+			onsearch.innerHTML= 'Nueva búsqueda';
+			onsearch.style.backgroundColor = 'navy';
+			onsearch.style.color = 'white';
+		}
+		search.oninput=function()
+		{
+			oninput.innerHTML = 'El usuario ha introducido algo!';
+		}
+		formu.onreset=function()
+		{
+			onreset.innerHTML= 'Restablecido';
+			onreset.style.backgroundColor = 'red';
+			onreset.style.color = 'white';
+		}
+		formu.onsubmit=function()
+		{
+			onsubmit.innerHTML= 'Enviado';
+			onsubmit.style.backgroundColor= 'red';
+		}
+	</script>
+	</body>
+</html>
+
+

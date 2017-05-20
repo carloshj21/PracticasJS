@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Calendario</title>
+	</head>
+	<body>
+		<script type='text/javascript'>
+			var arre=[];
+			var i=0;
+//------Declaración de objetos--------------------------------------------------------------------------
+			var cita =
+			{
+				fecha: new Date(),
+				nombreCliente:'',
+			}
+			var calendario =
+			{	
+				agregarCitas:function()
+				{
+					arre[i]= "Nombre del Cliente: "+cita.nombreCliente+"\nCita: "+cita.fecha;
+					console.log(arre[i]);
+					i++;
+				}
+			}
+//---------------------------------------------------------------------------------------------------------
+			do
+			{
+				principal = prompt('¿Qué desea hacer?\n\n1) Crear una cita\n2) Agregar una cita al calendario');
+				if(principal==1)
+				{
+					var cliente = prompt('Nombre del cliente:',['Apellido Paterno  Apellido Materno   Nombre(s)']);
+					cita.nombreCliente=cliente;
+					añop = prompt('Año:\n1) 2017\n2) 2018');
+					if(añop==1)
+						cita.fecha.setFullYear(2017);
+					if(añop==2)
+						cita.fecha.setFullYear(2018);
+					mesp = prompt('Mes:\n1) Enero\n2) Febrero\n3) Marzo\n4) Abril\n5) Mayo\n6) Junio\n7) Julio\n8) Agosto\n9) Septiembre\n10) Octubre\n11) Noviembre\n12) Diciembre');
+					if(mesp==1)
+						cita.fecha.setMonth(0);
+					if(mesp==2)
+						cita.fecha.setMonth(1);
+					if(mesp==3)
+						cita.fecha.setMonth(2);
+					if(mesp==4)
+						cita.fecha.setMonth(3);
+					if(mesp==5)
+						cita.fecha.setMonth(4);
+					if(mesp==6)
+						cita.fecha.setMonth(5);
+					if(mesp==7)
+						cita.fecha.setMonth(6);
+					if(mesp==8)
+						cita.fecha.setMonth(7);
+					if(mesp==9)
+						cita.fecha.setMonth(8);
+					if(mesp==10)
+						cita.fecha.setMonth(9);
+					if(mesp==11)
+						cita.fecha.setMonth(10);
+					if(mesp==12)
+						cita.fecha.setMonth(11);
+					var dia = prompt('Día:',['Introduzca el valor numérico']);
+					cita.fecha.setDate(dia);
+					var hora = prompt('Hora:',['Solamente hora en formato 24 horas']);
+					cita.fecha.setHours(hora);
+					var minutos = prompt('Minutos:',['Solamente minutos']);
+					cita.fecha.setMinutes(minutos);
+					cita.fecha.setSeconds(0);
+					pregunta = prompt('Repetir el proceso?\n\n1) Si\n2) No');
+				}
+				if(principal==2)
+					calendario.agregarCitas();
+			}
+			while(pregunta!=2)
+		</script>
+	</body>
+</html>

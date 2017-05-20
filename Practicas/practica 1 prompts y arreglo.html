@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+		<title></title>
+	</head>
+	<body>
+		<script type='text/javascript'>
+			var mensaje=prompt("Introduce un número mayor a 5 menor a 20");
+			var num=[];
+			if(mensaje>5 && mensaje<20)
+			{
+				for(x=0;x<mensaje;x++)
+				{
+					num[x]=prompt('Introduce un nombre');
+				}
+				window.alert(num);
+			}
+			else
+				window.alert('Número introducido inválido');
+		</script>
+	</body>
+</html>

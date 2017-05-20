@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Botones y Listas</title>
+		<script type='text/javascript' src='../programs/jquery-3.2.1.js'> </script>
+	</head>
+	<body>
+		<button class='lista'>Crea lista</button>
+		<button class='elemento'>Crea elemento</button>
+		<lu>
+		</lu>
+		<script type='text/javascript'>
+			$('.elemento').click(function(){
+				$('lu').add("<li>Elemento</li>").appendTo('lu');
+			});
+			$('.lista').click(function(){
+				$('.lista:first').clone().appendTo('lu');
+			});
+		</script>
+	</body>
+</html>

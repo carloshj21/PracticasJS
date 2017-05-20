@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Eventos</title>
+		<script type='text/javascript' src='../programs/jquery-3.2.1.js'> </script>
+	</head>
+	<body>
+	<div id='overout'>
+		onmouseover & onmouseout
+	</div>
+	<div id='move'>
+		onmousemove
+	</div>
+	<div id='enterleave'>
+		onmouseenter & onmouseleave
+	</div>
+	<div id='clickdbclick'>
+		onclick & ondblclick
+	</div>
+	<div id='menu'>
+	 oncontextmenu 
+	</div>
+	<div id='updown'>
+		onmouseup & onmousedown
+	</div>
+	<div id='keys'>
+		onkeydown & onkeyup
+	</div>
+	<div id='minimizar'>
+		onresize
+	</div>
+	<div id='scroll'>
+		onscroll
+	</div><br/>
+	<form id='formu'>
+		<input type='text' id='focus' required/><br/>
+		<div id='onfocus'>
+			onfocus & onblur
+		</div>
+		<!--<div id='invalid'>
+			oninvalid
+		</div>--><br/>
+		<input type='text' value='Hola' id='change'/><br/>
+		<div id='onchange'>
+			onchange
+		</div>
+		<div id='select'>
+			onselect
+		</div><br/>
+		<!--<input type='search' id='search'/><br/>
+		<div id='onsearch'> 
+			onsearch
+		</div>
+		<div id='input'>
+			oninput
+		</div><br/>
+		<input type='reset' value='Restablecer'/>
+		<div id='reset'>
+			onreset
+		</div><br/>-->
+		<input type='submit' value='Enviar'/>
+		<div id='onsubmit'>
+			onsubmit
+		</div>
+	</form>
+	<script type='text/javascript'>
+		var a=0;
+		$("#overout").mouseover(function(){
+			$("#overout").html('El mouse está aquí').css({
+				"background-color":"blue",
+				"color":"white"
+			})
+		}).mouseout(function(){
+			$("#overout").html('El mouse no está aquí').css({
+				"background-color":"yellow",
+				"color":"black"
+			})
+		});
+		$('#move').mousemove(function(){
+			$('#move').html(a+=1).css({
+				"background-color":"red",
+				"color":"white"
+			})
+		});
+		$('#enterleave').mouseenter(function(){
+			$('#enterleave').html('El mouse entró aquí').css({
+				"background-color":"green",
+				"color":"white"
+			})
+		}).mouseleave(function(){
+			$('#enterleave').html('El mouse salió de aquí').css({
+				"background-color":"orange",
+				"color":"black"
+			})
+		});
+		$('#clickdbclick').click(function(){
+			$('#clickdbclick').html('Se dió un click').css({
+				"background-color":"purple",
+				"color":"white"
+			})
+		}).dblclick(function(){
+			$('#clickdbclick').html('Se dió doble click').css({
+				"background-color":"cyan",
+				"color":"black"
+			})
+		});
+		$('body').contextmenu(function(){
+			$('#menu').html('Se desplegó el menú').css({
+				"background-color":"blue",
+				"color":"white"
+			})
+		});
+		$('#updown').mouseup(function(){
+			$('#updown').html('El mouse no está siendo presionado').css({
+				"background-color":"yellow",
+				"color":"black"
+			})
+		}).mousedown(function(){
+			$('#updown').html('El mouse está siendo presionado').css({
+				"background-color":"red",
+				"color":"white"
+			})
+		});
+		$('body').keydown(function(){
+			$('#keys').html('Se está presionando una tecla').css({
+				"background-color":"green",
+				"color":"white"
+			})
+		}).keyup(function(){
+			$('#keys').html('No se está presionando una tecla').css({
+				"background-color":"orange",
+				"color":"black"
+			})
+		});
+		$(window).resize(function(){
+			$('#minimizar').html('Se minimizó el tamaño de la página').css({
+				"background-color":"purple",
+				"color":"white"
+			})
+		});
+		$(window).scroll(function(){
+			$('#scroll').html('Se utilizó el scroll').css({
+				"background-color":"cyan",
+				"color":"black"
+			})
+		});
+		$('#focus').focus(function(){
+			$('#focus').css("background-color","red");
+			$('#onfocus').html('ON FOCUS');
+		}).blur(function(){
+			$('#focus').css("background-color","white");
+			$('#onfocus').html('ON BLUR');
+		})/*.error(function(){
+			$('#invalid').html('Dejaste vació el campo!');
+		})*/;
+		$('#change').change(function(){
+			$('#onchange').html('CHANGE');
+		}).select(function(){
+			$('#select').html('Haz seleccionado texto!');
+		});
+		/*$('#search').search(function(){
+			$('#onsearch').html('Nueva búsqueda').css({
+				"background-color":"navy",
+				"color":"white"
+			})
+		}).input(function(){
+			$('#input').html('El usuario ha introducido algo!')
+		});*/
+		$('#formu').submit(function(){
+			$('#onsubmit').html('Enviado').css("background-color","red")
+		})/*.reset(function(){
+			$('#reset').html('Restablecido').css({
+				"background-color":"red",
+				"color":"white"
+			})
+		})*/;
+	</script>
+	</body>
+</html>
+
+

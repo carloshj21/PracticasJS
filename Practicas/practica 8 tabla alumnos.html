@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Tabla alumnos</title>
+		<script type='text/javascript' src='../programs/jquery-3.2.1.js'> </script>
+	</head>
+	<body>
+		<div id='div1' style='background-color:navy; color:white; height:20px;'>
+		</div>
+		<div id='div2' style='background-color:navy; color:white; height:20px;'>
+		</div>
+		<div id='div3' style='background-color:navy; color:white; height:20px;'>
+		</div>
+		<div id='div4' style='background-color:navy; color:white; height:20px;'>
+		</div>
+		<br/><br/><br/>
+		<table border='1' align='center' id='tabla'>
+			<tr>
+				<td>Nombre</td>
+				<td>Apellido Paterno</td>
+				<td>Apellido Materno</td>
+				<td>Número de cuenta</td>
+				<td>Botón</td>
+			</tr>
+			<tr>
+				<td class='nombre'>Carlos</td>
+				<td class='apPaterno'>Hernández</td>
+				<td class='apMaterno'>Juárez</td>
+				<td class='cuenta'>316262165</td>
+				<td><button>Mostrar</button></td>
+			</tr>
+			<tr>
+				<td class='nombre'>Ricardo</td>
+				<td class='apPaterno'>Hernández</td>
+				<td class='apMaterno'>Juárez</td>
+				<td class='cuenta'>317829312</td>
+				<td><button>Mostrar</button></td>
+			</tr>
+			<tr>
+				<td class='nombre'>Isac</td>
+				<td class='apPaterno'>Valencia</td>
+				<td class='apMaterno'>Medina</td>
+				<td class='cuenta'>316827345</td>
+				<td><button>Mostrar</button></td>
+			</tr>
+			<tr>
+				<td class='nombre'>Anthony</td>
+				<td class='apPaterno'>Arenas</td>
+				<td class='apMaterno'>Martínez</td>
+				<td class='cuenta'>316238348</td>
+				<td><button>Mostrar</button></td>
+			</tr>
+		</table>
+		<script type='text/javascript'>
+			$("button").click(function(){
+				var nombre=($(this).parent().siblings('.nombre').html());
+				var apPaterno=($(this).parent().siblings('.apPaterno').html());
+				var apMaterno=($(this).parent().siblings('.apMaterno').html());
+				var cuenta=($(this).parent().siblings('.cuenta').html());
+				$('#div1').html('Nombre: '+nombre);
+				$('#div2').html('Apellido Paterno:  '+apPaterno);
+				$('#div3').html('Apellido Materno:  '+apMaterno);
+				$('#div4').html('Número de Cuenta:  '+cuenta);
+			});
+		</script>
+	</body>
+</html>

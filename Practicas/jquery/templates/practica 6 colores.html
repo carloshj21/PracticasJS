@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Colores</title>
+		<script type='text/javascript' src='../programs/jquery-3.2.1.js'> </script>
+	</head>
+	<body>
+	<table align='center'>
+		<tr id='renglon'>
+			<td class='color' height='80px' width='40px'></td>
+		</tr>
+	</table>
+		<script type='text/javascript'>
+			var arre=["	rgb(255, 0, 0)","rgb(255, 64, 0)","rgb(255, 128, 0)","	rgb(255, 191, 0)","rgb(255, 255, 0)","	rgb(191, 255, 0)",
+						"rgb(128, 255, 0)","rgb(64, 255, 0)","rgb(0, 255, 0)","rgb(0, 255, 64)","rgb(0, 255, 128)","rgb(0, 255, 191)",
+						"rgb(0, 255, 255)","rgb(0, 191, 255)","rgb(0, 128, 255)","rgb(0, 64, 255)","rgb(0, 0, 255)","rgb(64, 0, 255)",
+						"rgb(128, 0, 255)","rgb(191, 0, 255)","rgb(255, 0, 255)","rgb(255, 0, 191)","rgb(255, 0, 128)","rgb(255, 0, 64)",
+						"rgb(255, 0, 0)"];
+			$(document).ready(function(){
+				$('.color').css("background-color",arre[0]).mouseover(function(){
+					$('body').css("background-color",arre[0]);
+				}).mouseout(function(){
+					$('body').css("background-color","white");
+				});
+				for(x=1;x<25;x++)
+				{
+					$('td:first').clone().appendTo('#renglon').css("background-color",arre[x]);
+				}
+				$("td").mouseover(function(){
+						$('body').css("background-color",$(this).css("background-color"));
+					}).mouseout(function(){
+						$('body').css("background-color","white");
+					});
+			});
+		</script>
+	</body>
+</html>

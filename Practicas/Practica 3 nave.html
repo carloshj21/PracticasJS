@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+		<title></title>
+	</head>
+	<body>
+		<script type='text/javascript'>
+			var estado=prompt('Estado de la nave: \n 1) Excelente \n 2) Dañada \n 3) Deplorable',['Introduzca el número de la opción que escoja']);
+			//----Declaración objetos-------------------
+			var nave=
+			{
+				tamanio:5,
+				estado:estado,
+				municiones:10,
+				velocidad:
+				{
+					valor:10,
+					acelerar:function()
+					{
+						this.valor++;
+						return this.valor;
+					},
+					desacelerar:function()
+					{
+						this.valor--;
+						return this.valor;
+					}
+				},
+				disparar:function()
+				{
+					this.municiones--;
+					return this.municiones;
+				},
+				reparar:function()
+				{
+					this.estado++;
+					return this.estado;
+				},
+				cargarMuniciones:function()
+				{
+					this.municiones++;
+					return this.municiones;
+				},
+				crecer:function()
+				{
+					this.tamanio++;
+					return this.tamanio;
+				},
+				disminuir:function()
+				{
+					this.tamanio--;
+					return this.tamanio;
+				},
+				tripulacion:
+				{
+					integrantes:5,
+					nacionalidad:'Mexicana',
+					aumentarIntegrantes:function()
+					{
+						this.integrantes++;
+						return this.integrantes;
+					},
+					disminuirIntegrantes:function()
+					{
+						this.integrantes--;
+						return this.integrantes;
+					}
+				}
+			}
+			//-------------------------------------------
+			if(nave.estado==1)
+			{
+				est='Excelente';
+				window.alert("Tamaño: "+nave.tamanio+"\n"+"Estado: "+est+"\n"+"Velocidad: "+nave.velocidad.valor+"\n"
+					 +"Municiones:"+nave.municiones+"\n"+"Tripulación: "+nave.tripulacion.nacionalidad+"\n"+
+					 "Número de integrantes de la tripulación: "+nave.tripulacion.integrantes);
+				while(nave.velocidad.valor<20 && nave.velocidad.valor>0 && nave.municiones<15 && nave.municiones>0 && nave.tamanio>0 && nave.tripulacion.integrantes>0)
+				{
+					var exce=prompt('¿Qué desea hacer? \n\n1) Acelerar \n2) Desacelerar \n3) Cargar municiones \n4) Disparar \n5) Aumentar tamaño de la nave \n6) Disminuir tamaño de la nave \n7) Agregar integrantes \n8) Disminuir integrantes');
+					if(exce==1)
+					{
+						nave.velocidad.acelerar();
+						window.alert('Haz acelerado!! \nVelocidad: '+nave.velocidad.valor);
+					}
+					if(exce==2)
+					{
+						nave.velocidad.desacelerar();
+						window.alert('Haz desacelerado!! \nVelocidad: '+nave.velocidad.valor);
+					}
+					if(exce==3)
+					{
+						nave.cargarMuniciones();
+						window.alert('Munición cargada!! \nMuniciones: '+nave.municiones);
+					}
+					if(exce==4)
+					{
+						nave.disparar();
+						window.alert('Haz disparado!! \nMuniciones: '+nave.municiones);
+					}
+					if(exce==5)
+					{
+						nave.crecer();
+						window.alert('La nave ha crecido!! \nTamaño: '+nave.tamanio);
+					}
+					if(exce==6)
+					{
+						nave.disminuir();
+						window.alert('La nave se ha hecho más pequeña!! \nTamaño: '+nave.tamanio);
+					}
+					if(exce==7)
+					{
+						nave.tripulacion.aumentarIntegrantes();
+						window.alert('Alguien se ha unido a la misión!! \nTripulación: '+nave.tripulacion.integrantes);
+					}
+					if(exce==8)
+					{
+						nave.tripulacion.disminuirIntegrantes();
+						window.alert('Alguien ha abandonado la misión!! \nTripulación: '+nave.tripulacion.integrantes);
+					}
+					window.alert("Tamaño: "+nave.tamanio+"\n"+"Estado: "+est+"\n"+"Velocidad: "+nave.velocidad.valor+"\n"
+					 +"Municiones:"+nave.municiones+"\n"+"Tripulación: "+nave.tripulacion.nacionalidad+"\n"+
+					 "Número de integrantes de la tripulación: "+nave.tripulacion.integrantes);
+				}
+				if(nave.velocidad.valor==20)
+					window.alert('Ya no puedes acelerar más!!\n Nave fuera de control!!');
+				if(nave.velocidad.valor==0)
+					window.alert('Nave detenida, ubicada por enemigos.\nNave Destruida!!');
+				if(nave.municiones==15)
+					window.alert('Sobrecarga de municiones!!\nNave fuera de control!!');
+				if(nave.municiones==0)
+					window.alert('Sin municiones!!\nNave destruida!!');
+				if(nave.tamanio==0)
+					window.alert('La nave ha desaparecido!!');
+				if(nave.tripulacion.integrantes==0)
+					window.alert('Todos han abandonado la misión!!');
+			}
+			if(nave.estado==2)
+			{
+				est='Dañada';
+				window.alert("Tamaño: "+nave.tamanio+"\n"+"Estado: "+est+"\n"+"Velocidad: "+nave.velocidad.valor+"\n"
+					 +"Municiones:"+nave.municiones+"\n"+"Tripulación: "+nave.tripulacion.nacionalidad+"\n"+
+					 "Número de integrantes de la tripulación: "+nave.tripulacion.integrantes);
+				while(nave.velocidad.valor<20 && nave.velocidad.valor>0 && nave.municiones<15 && nave.municiones>0 && nave.tamanio>0 && nave.tripulacion.integrantes>0)
+				{
+					var exce=prompt('¿Qué desea hacer? \n\n1) Acelerar \n2) Desacelerar \n3) Cargar municiones \n4) Disparar \n5) Aumentar tamaño de la nave \n6) Disminuir tamaño de la nave \n7) Agregar integrantes \n8) Disminuir integrantes \n9) Reparar');
+					if(exce==1)
+					{
+						nave.velocidad.acelerar();
+						window.alert('Haz acelerado!! \nVelocidad: '+nave.velocidad.valor);
+					}
+					if(exce==2)
+					{
+						nave.velocidad.desacelerar();
+						window.alert('Haz desacelerado!! \nVelocidad: '+nave.velocidad.valor);
+					}
+					if(exce==3)
+					{
+						nave.cargarMuniciones();
+						window.alert('Munición cargada!! \nMuniciones: '+nave.municiones);
+					}
+					if(exce==4)
+					{
+						nave.disparar();
+						window.alert('Haz disparado!! \nMuniciones: '+nave.municiones);
+					}
+					if(exce==5)
+					{
+						nave.crecer();
+						window.alert('La nave ha crecido!! \nTamaño: '+nave.tamanio);
+					}
+					if(exce==6)
+					{
+						nave.disminuir();
+						window.alert('La nave se ha hecho más pequeña!! \nTamaño: '+nave.tamanio);
+					}
+					if(exce==7)
+					{
+						nave.tripulacion.aumentarIntegrantes();
+						window.alert('Alguien se ha unido a la misión!! \nTripulación: '+nave.tripulacion.integrantes);
+					}
+					if(exce==8)
+					{
+						nave.tripulacion.disminuirIntegrantes();
+						window.alert('Alguien ha abandonado la misión!! \nTripulación: '+nave.tripulacion.integrantes);
+					}
+					if(exce==9)
+					{
+						nave.reparar();
+						window.alert('Nave reparada!! \nEstado: Excelente');
+					}
+					window.alert("Tamaño: "+nave.tamanio+"\n"+"Estado: Excelente\nVelocidad: "+nave.velocidad.valor+"\n"
+					 +"Municiones:"+nave.municiones+"\n"+"Tripulación: "+nave.tripulacion.nacionalidad+"\n"+
+					 "Número de integrantes de la tripulación: "+nave.tripulacion.integrantes);
+				}
+				if(nave.velocidad.valor==20)
+					window.alert('Ya no puedes acelerar más!!\n Nave fuera de control!!');
+				if(nave.velocidad.valor==0)
+					window.alert('Nave detenida, ubicada por enemigos.\nNave Destruida!!');
+				if(nave.municiones==15)
+					window.alert('Sobrecarga de municiones!!\nNave fuera de control!!');
+				if(nave.municiones==0)
+					window.alert('Sin municiones!!\nNave destruida!!');
+				if(nave.tamanio==0)
+					window.alert('La nave ha desaparecido!!');
+				if(nave.tripulacion.integrantes==0)
+					window.alert('Todos han abandonado la misión!!');
+			}
+			if(nave.estado==3)
+			{
+				est='Deplorable';
+				window.alert("Tamaño: "+nave.tamanio+"\n"+"Estado: "+est+"\n"+"Velocidad: "+nave.velocidad.valor+"\n"
+					 +"Municiones:"+nave.municiones+"\n"+"Tripulación: "+nave.tripulacion.nacionalidad+"\n"+
+					 "Número de integrantes de la tripulación: "+nave.tripulacion.integrantes);
+				window.alert('¡Nave fuera de control!');
+			}
+		</script>
+	</body>
+</html>

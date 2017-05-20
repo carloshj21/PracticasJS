@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Práctica Métodos de cambio y búsqueda</title>
+		<script type='text/javascript' src='../programs/jquery-3.2.1.js'></script>
+		<style>
+			div
+			{
+				background-color:#127896;
+				color:yellow;
+				margin:50px;
+				padding:50px;
+			}
+			h1,h2
+			{
+				align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id='titulo'>Curso Web</h1>
+		<h2 id='subtitulo'>Javascript</h2>
+		<div id='Temario'>
+			<h3>Temas:</h3>
+			<p>Primer<a id='aaaa' href='mipagina' class='texto'>tema</a></p>
+		</div>
+		<div id='datos'>
+			<p class='texto'>Aqui van los datos</p>
+			<form>
+				Nombre:<input type='text'/><br/>
+				Ciudad:<input type='text'/><br/>
+				Apellido:<input type='text'/><br/>
+				Edad:<input type='number'/><br/>
+				<input type='submit'/>
+			</form>
+		</div>
+		<div id='agradecimientos'>
+			<p class='texto'>Aqui van las gracias</p>
+		</div>
+		<script>
+			$('body').css("backgroundColor","navy");
+			$("#titulo").css({
+				"color":"white",
+				"text-align":"center"
+			});
+			$('#subtitulo').html('<marquee>Javascript</marquee>').css({
+				"background-color":"orange",
+				"color":"green"
+			});
+			$('#Temario').css({
+				"background-color":"yellow",
+				"color":"black"
+			});
+			$('#datos').css({
+				"background-color":"red",
+				"color":"white",
+				"height":"500px",
+				"width":"150px",
+				"text-align":"center",
+				"margin":"200px"
+			});
+			$('#agradecimientos').html('ADIOS!').css({
+				"font-size":"45px",
+				"color":"red",
+				"background-color":"white",
+				"text-align":"right"
+			});
+		</script>
+	</body>
+</html>

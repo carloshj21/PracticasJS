@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Botones y Listas</title>
+		<script type='text/javascript' src='../programs/jquery-3.2.1.js'> </script>
+	</head>
+	<body>
+		<div>
+			<button class='lista'>Crea lista</button>
+			<button class='elemento'>Crea elemento</button>
+		</div>
+		<ul>
+		</ul>
+		<script type='text/javascript'>
+			$(document).on("click",'.lista',function(){
+				$("div:first").clone().appendTo($("ul"));
+			});
+			$(document).on("click",'.elemento',function(){
+				$("ul").append("<li>Elemento</li>");
+			});
+		</script>
+	</body>
+</html>

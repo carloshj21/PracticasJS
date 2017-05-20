@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Práctica Métodos de cambio y búsqueda</title>
+		<style>
+			div
+			{
+				background-color:#127896;
+				color:yellow;
+				margin:50px;
+				padding:50px;
+			}
+			h1,h2
+			{
+				align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id='titulo'>Curso Web</h1>
+		<h2 id='subtitulo'>Javascript</h2>
+		<div id='Temario'>
+			<h3>Temas:</h3>
+			<p>Primer<a id='aaaa' href='mipagina' class='texto'>tema</a></p>
+		</div>
+		<div id='datos'>
+			<p class='texto'>Aqui van los datos</p>
+			<form>
+				Nombre:<input type='text'/><br/>
+				Ciudad:<input type='text'/><br/>
+				Apellido:<input type='text'/><br/>
+				Edad:<input type='number'/><br/>
+				<input type='submit'/>
+			</form>
+		</div>
+		<div id='agradecimientos'>
+			<p class='texto'>Aqui van las gracias</p>
+		</div>
+		<script>
+			var divDatos = document.getElementById('datos');
+			var temas = document.getElementById('Temario');
+			var titulo = document.getElementById('titulo');
+			var subtitulo = document.getElementById('subtitulo');
+			var gracias = document.getElementById('agradecimientos');
+			var textos = document.getElementsByClassName('texto');
+			document.body.style.backgroundColor = 'navy';
+			titulo.style.color = 'white';
+			titulo.style.textAlign = 'center';
+			subtitulo.innerHTML = '<marquee>Javascript</marquee>';
+			subtitulo.style.backgroundColor = 'orange';
+			subtitulo.style.color = 'green';
+			temas.style.backgroundColor = 'yellow';
+			temas.style.color = 'black';
+			divDatos.style.backgroundColor = 'red';
+			divDatos.style.color = 'white';
+			divDatos.style.height = '500px';
+			divDatos.style.width = '150px';
+			divDatos.style.textAlign = 'center';
+			divDatos.style.margin = '200px';
+			gracias.innerHTML = 'ADIOS!';
+			gracias.style.fontFamily= 'Arial';
+			gracias.style.fontSize= '45px';
+			gracias.style.color= 'red';
+			gracias.style.backgroundColor= 'white';
+			gracias.style.textAlign= 'right';
+		</script>
+	</body>
+</html>

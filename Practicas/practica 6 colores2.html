@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Colores</title>
+		<script type='text/javascript' src='../programs/jquery-3.2.1.js'> </script>
+	</head>
+	<body>
+	<table border='1' align='center'>
+		<tr id='renglon'>
+			<td class='color' height='40px' width='20px'></td>
+		</tr>
+	</table>
+		<script type='text/javascript'>
+			var arre=["	rgb(255, 0, 0)","rgb(255, 64, 0)","rgb(255, 128, 0)","	rgb(255, 191, 0)","rgb(255, 255, 0)","	rgb(191, 255, 0)",
+						"rgb(128, 255, 0)","rgb(64, 255, 0)","rgb(0, 255, 0)","rgb(0, 255, 64)","rgb(0, 255, 128)","rgb(0, 255, 191)",
+						"rgb(0, 255, 255)","rgb(0, 191, 255)","rgb(0, 128, 255)","rgb(0, 64, 255)","rgb(0, 0, 255)","rgb(64, 0, 255)",
+						"rgb(128, 0, 255)","rgb(191, 0, 255)","rgb(255, 0, 255)","rgb(255, 0, 191)","rgb(255, 0, 128)","rgb(255, 0, 64)",
+						"rgb(255, 0, 0)"];
+			$(document).ready(function(){
+				for(x=0;x<3;x++)
+				{
+					$('.color').clone().appendTo('tr');
+					$('.color').css("background-color",arre[x]);
+					$('.color').mouseover(function(){
+						$('body').css("background-color",arre[x-1]);
+					});
+				}
+			});
+		</script>
+	</body>
+</html>
